@@ -1,0 +1,9 @@
+
+多进程造成如下问题：
+1、静态成员与单例模式完全失效
+2、线程同步机制完全失效
+3、SharePreference可靠性下降
+4、Application会多次创建
+
+Parcelable   Serializable接口可以完成对象的序列号过程
+

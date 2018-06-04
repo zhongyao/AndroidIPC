@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.hongri.androidipc">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,8 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeActivity"
-            android:process=":HomeActivity">
+            android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -19,12 +21,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SecondActivity"
-            android:process=":SecondActivityProcess">
+            android:name=".SecondActivity">
         </activity>
+        <!--以:开头的进程属于该应用的私有进程-->
         <activity
-            android:name=".ThirdActivity"
-            android:process=":ThirdActivityProcess">
+            android:name=".ThirdActivity">
         </activity>
     </application>
 
