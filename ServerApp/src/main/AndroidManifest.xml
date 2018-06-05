@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.hongri.androidipc">
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+          package="com.hongri.server">
 
     <application
         android:allowBackup="true"
@@ -12,21 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".SecondActivity">
-        </activity>
-        <!-- 以:开头的进程属于该应用的私有进程 -->
-        <activity android:name=".ThirdActivity">
-        </activity>
-        <activity
-            android:name=".MessagerActivity"
-            android:process=":MessageActivityProcess">
         </activity>
 
         <service

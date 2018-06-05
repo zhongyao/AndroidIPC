@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidIPC.iml" filepath="$PROJECT_DIR$/AndroidIPC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServerApp/ServerApp.iml" filepath="$PROJECT_DIR$/ServerApp/ServerApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

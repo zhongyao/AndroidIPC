@@ -11,10 +11,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import com.hongri.androidipc.Util.IPCUtil;
-import com.hongri.androidipc.Util.Logger;
 import com.hongri.androidipc.bean.Person;
 import com.hongri.androidipc.bean.User;
+import com.hongri.androidipc.util.IPCUtil;
+import com.hongri.androidipc.util.Logger;
 
 /**
  * @author hongri
@@ -52,6 +52,14 @@ public class HomeActivity extends AppCompatActivity {
                 doParcelable();
                 //Intent intent = new Intent(HomeActivity.this, SecondActivity.class);
                 //startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btnMessager).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, MessagerActivity.class);
+                startActivity(intent);
             }
         });
     }

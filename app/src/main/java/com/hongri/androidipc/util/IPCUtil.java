@@ -1,4 +1,4 @@
-package com.hongri.androidipc.Util;
+package com.hongri.androidipc.util;
 
 import java.util.List;
 

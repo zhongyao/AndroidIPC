@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import com.hongri.androidipc.Util.IPCUtil;
-import com.hongri.androidipc.Util.Logger;
+import com.hongri.androidipc.util.IPCUtil;
+import com.hongri.androidipc.util.Logger;
 import com.hongri.androidipc.bean.Person;
 import com.hongri.androidipc.bean.User;
 

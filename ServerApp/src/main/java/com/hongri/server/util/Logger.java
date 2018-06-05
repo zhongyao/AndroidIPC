@@ -1,4 +1,4 @@
-package com.hongri.androidipc.Util;
+package com.hongri.server.util;
 
 import android.util.Log;
 
