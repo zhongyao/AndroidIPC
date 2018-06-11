@@ -9,11 +9,11 @@ import android.util.Log;
 public class Logger {
     public static final String TAG = "hongri";
 
-    public static void D(String message) {
+    public static void d(String message) {
         Log.d(TAG, message);
     }
 
-    public static void E(String message){
+    public static void e(String message){
         Log.e(TAG,message);
     }
 }

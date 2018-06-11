@@ -55,7 +55,7 @@ public class SecondActivity extends AppCompatActivity {
         }
         int weight = person.getWeight();
         String school = person.getSchool();
-        Logger.D("weight:" + weight + " school:" + school);
+        Logger.d("weight:" + weight + " school:" + school);
 
     }
 
@@ -67,7 +67,7 @@ public class SecondActivity extends AppCompatActivity {
         int age = user.getAge();
         String name = user.getName();
 
-        Logger.D("age:" + age + " name:" + name);
+        Logger.d("age:" + age + " name:" + name);
     }
 
     /**
@@ -78,12 +78,12 @@ public class SecondActivity extends AppCompatActivity {
 
         processName = IPCUtil.getProcessName(this, appPid);
 
-        Logger.D(TAG + "processName:" + processName);
+        Logger.d(TAG + "processName:" + processName);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Logger.D(UserManager.UserId + "");
+        Logger.d(UserManager.UserId + "");
     }
 }

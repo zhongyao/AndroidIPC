@@ -31,7 +31,7 @@ public class MessagerActivity extends AppCompatActivity {
             super.handleMessage(msg);
             switch (msg.what) {
                 case MyConstant.MESSAGE_FROM_CLIENT:
-                    Logger.D("client got the reply:" + msg.getData().getString("reply"));
+                    Logger.d("client got the reply:" + msg.getData().getString("reply"));
                     break;
             }
         }

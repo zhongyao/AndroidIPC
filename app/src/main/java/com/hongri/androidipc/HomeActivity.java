@@ -62,6 +62,14 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.btnProvider).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ContentProviderActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void doParcelable() {
@@ -100,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
             String name = newUser.getName();
             int age = newUser.getAge();
             in.close();
-            Logger.D("反序列化：" + "name:" + name + " age:" + age);
+            Logger.d("反序列化：" + "name:" + name + " age:" + age);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -112,14 +120,14 @@ public class HomeActivity extends AppCompatActivity {
 
         processName = IPCUtil.getProcessName(this, appPid);
 
-        Logger.D(TAG + "processName:" + processName);
+        Logger.d(TAG + "processName:" + processName);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         UserManager.UserId = 2;
-        Logger.D(UserManager.UserId + "");
+        Logger.d(UserManager.UserId + "");
         UserManager.UserId = 5;
     }
 }

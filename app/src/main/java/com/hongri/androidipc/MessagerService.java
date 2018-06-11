@@ -26,7 +26,7 @@ public class MessagerService extends Service {
                 case MyConstant.MESSAGE_FROM_CLIENT:
                     try {
                         Bundle bundle = msg.getData();
-                        Logger.D("server got a message:" + bundle.getString("msg"));
+                        Logger.d("server got a message:" + bundle.getString("msg"));
                         Messenger client = msg.replyTo;
                         Message replyMessage = Message.obtain(null, MyConstant.MESSAGE_FROM_CLIENT);
 
