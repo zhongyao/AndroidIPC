@@ -35,6 +35,16 @@
             android:exported="true"
             android:process=":remote">
         </service>
+
+        <provider
+            android:name=".contentprovider.MyContentProvider"
+            android:authorities="com.hongri.androidipc.contentprovider.provider"
+            android:permission="com.hongri.androidipc.PROVIDER"
+            android:process=":provider">
+        </provider>
+
+        <activity android:name=".ContentProviderActivity">
+        </activity>
     </application>
 
 </manifest>
