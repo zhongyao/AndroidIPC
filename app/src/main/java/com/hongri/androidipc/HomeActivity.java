@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import com.hongri.androidipc.bean.Person;
 import com.hongri.androidipc.bean.User;
+import com.hongri.androidipc.socket.TCPClientActivity;
 import com.hongri.androidipc.util.IPCUtil;
 import com.hongri.androidipc.util.Logger;
 
@@ -74,7 +75,7 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.btnTCP).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, TcpClientActivity.class);
+                Intent intent = new Intent(HomeActivity.this, TCPClientActivity.class);
                 startActivity(intent);
             }
         });

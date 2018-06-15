@@ -7,7 +7,7 @@ import android.util.Log;
  */
 
 public class Logger {
-    public static final String TAG = "hongri";
+    public static final String TAG = "yao";
 
     public static void d(String message) {
         Log.d(TAG, message);

@@ -49,12 +49,12 @@
         </activity>
 
         <service
-            android:name=".socket.TcpServerService"
+            android:name=".socket.TCPServerService"
             android:enabled="true"
             android:exported="true">
         </service>
 
-        <activity android:name=".TcpClientActivity">
+        <activity android:name=".socket.TCPClientActivity">
         </activity>
     </application>
 
