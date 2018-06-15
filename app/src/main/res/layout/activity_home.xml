@@ -20,14 +20,20 @@
 
     <Button
         android:id="@+id/btnMessager"
-        android:text="跳转到MessagerActivity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="跳转到MessagerActivity"/>
 
     <Button
         android:id="@+id/btnProvider"
-        android:text="跳转到ContentProviderActivity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="跳转到ContentProviderActivity"/>
+
+    <Button
+        android:id="@+id/btnTCP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转到TcpClientActivity"/>
 
 </LinearLayout>

@@ -70,6 +70,14 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.btnTCP).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, TcpClientActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void doParcelable() {
