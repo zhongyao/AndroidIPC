@@ -19,6 +19,11 @@ import com.hongri.androidipc.util.Logger;
  * onCreate方法运行在主线程(main)中
  *
  * 其他方法运行在Binder线程池中
+ *
+ * ContentProvider原理分析：
+ * 应用启动入口ActivityThread(main)-->ActivityThread(attach)-->AMS(attachApplication)
+ * -->ApplicationThread(bindApplication)-->ActivityThread(handleBindApplication)
+ *
  */
 
 public class MyContentProvider extends ContentProvider {
