@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import com.hongri.androidipc.bean.Person;
 import com.hongri.androidipc.bean.User;
+import com.hongri.androidipc.contentprovider.ContentProviderActivity;
+import com.hongri.androidipc.messenger.MessengerActivity;
 import com.hongri.androidipc.socket.TCPClientActivity;
 import com.hongri.androidipc.util.IPCUtil;
 import com.hongri.androidipc.util.Logger;
@@ -56,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btnMessager).setOnClickListener(new OnClickListener() {
+        findViewById(R.id.btnMessenger).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, MessengerActivity.class);

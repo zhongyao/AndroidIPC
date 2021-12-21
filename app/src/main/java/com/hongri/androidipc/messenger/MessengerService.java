@@ -1,4 +1,4 @@
-package com.hongri.androidipc;
+package com.hongri.androidipc.messenger;
 
 import android.app.Service;
 import android.content.Intent;
@@ -13,6 +13,10 @@ import com.hongri.androidipc.util.MyConstant;
 
 /**
  * @author hongri
+ * @description Messenger 服务端进程：
+ *
+ * 在服务端创建一个Service来处理客户端的连接请求，同时创建一个Handler，并通过它来创建一个Messenger对象，
+ * 然后再Service的onBind中返回这个Messenger对象底层的Handler即可。
  */
 public class MessengerService extends Service {
 

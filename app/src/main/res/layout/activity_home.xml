@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,30 +9,49 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HomeActivity"/>
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="IPC-进程间通信"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转"/>
+        android:layout_margin="20dp"
+        android:background="@color/light_green"
+        android:text="跳转"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnMessager"
+        android:id="@+id/btnMessenger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转到MessagerActivity"/>
+        android:layout_margin="20dp"
+        android:background="@color/light_green"
+        android:text="Messenger"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnProvider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转到ContentProviderActivity"/>
+        android:layout_margin="20dp"
+        android:background="@color/light_green"
+        android:text="ContentProvider"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnTCP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转到TcpClientActivity"/>
+        android:layout_margin="20dp"
+        android:background="@color/light_green"
+        android:text="跳转到TcpClientActivity"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 </LinearLayout>

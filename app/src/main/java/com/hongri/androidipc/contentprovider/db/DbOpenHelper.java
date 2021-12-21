@@ -1,4 +1,4 @@
-package com.hongri.androidipc.db;
+package com.hongri.androidipc.contentprovider.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

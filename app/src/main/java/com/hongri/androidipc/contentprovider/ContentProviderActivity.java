@@ -1,4 +1,4 @@
-package com.hongri.androidipc;
+package com.hongri.androidipc.contentprovider;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.hongri.androidipc.R;
 import com.hongri.androidipc.bean.Book;
 import com.hongri.androidipc.bean.User;
 import com.hongri.androidipc.contentprovider.MyContentProvider;

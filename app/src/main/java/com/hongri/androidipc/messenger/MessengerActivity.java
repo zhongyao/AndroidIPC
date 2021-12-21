@@ -1,4 +1,4 @@
-package com.hongri.androidipc;
+package com.hongri.androidipc.messenger;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -13,11 +13,18 @@ import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.hongri.androidipc.R;
 import com.hongri.androidipc.util.Logger;
 import com.hongri.androidipc.util.MyConstant;
 
 /**
  * @author hongri
+ * @description Messenger 客户端进程：
+ * 首先绑定服务端的Service，绑定成功后用服务端返回的IBinder对象创建一个Messenger，
+ * 通过这个Messenger就可以向服务端发送消息了，发送消息类型为Message对象。
+ * 如果需要服务端能够回应客户端，就和服务端一样，我们还需要创建一个Handler并创建一个新的Messenger，
+ * 并把这个Messenger对象通过Message的replyTo参数传递给服务端，服务端通过这个replyTo参数就可以回应客户端。
  */
 public class MessengerActivity extends AppCompatActivity {
 

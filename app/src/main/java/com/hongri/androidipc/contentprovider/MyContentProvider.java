@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import com.hongri.androidipc.db.DbOpenHelper;
+import com.hongri.androidipc.contentprovider.db.DbOpenHelper;
 import com.hongri.androidipc.util.Logger;
 
 /**
