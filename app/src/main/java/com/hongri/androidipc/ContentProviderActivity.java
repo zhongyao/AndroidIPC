@@ -20,8 +20,10 @@ import com.hongri.androidipc.util.Logger;
  */
 public class ContentProviderActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Uri bookUri = MyContentProvider.BOOK_CONTENT_URI;
-    Uri userUri = MyContentProvider.USER_CONTENT_URI;
+    //book uri
+    private final Uri bookUri = MyContentProvider.BOOK_CONTENT_URI;
+    //user uri
+    private final Uri userUri = MyContentProvider.USER_CONTENT_URI;
     private Button btnInsert, btnQuery, btnQueryByUser, btnModify, btnDelete;
 
     @Override
@@ -42,6 +44,9 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
         btnDelete.setOnClickListener(this);
     }
 
+    /**
+     * 向 bookUri 中插入一本书
+     */
     private void doInsert() {
         ContentValues values = new ContentValues();
         values.put("name", "Android框架");
@@ -50,6 +55,9 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
         Logger.d("插入成功 ---> uri:" + uri.toString());
     }
 
+    /**
+     * 根据 bookUri 查询所有书籍
+     */
     private void doQuery() {
         Cursor bookCursor = getContentResolver().query(bookUri, new String[]{"_id", "name", "page"}, null, null, null);
         while (bookCursor.moveToNext()) {
@@ -62,6 +70,9 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
         bookCursor.close();
     }
 
+    /**
+     * 查询 userUri 所有图书员
+     */
     private void doQueryUser() {
         Cursor userCursor = getContentResolver().query(userUri, new String[]{"_id", "name", "sex"}, null, null, null);
         while (userCursor.moveToNext()) {
@@ -74,9 +85,12 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
         userCursor.close();
     }
 
+    /**
+     * 更新书籍【Android底层开发】
+     */
     private void doUpdate() {
         ContentValues updateValues = new ContentValues();
-        updateValues.put("name", "Android底层");
+        updateValues.put("name", "Android底层开发");
         updateValues.put("page", 3345);
         int row = getContentResolver().update(bookUri, updateValues, "name=?", new String[]{"Android框架"});
         if (row > 0) {
@@ -84,6 +98,9 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
         }
     }
 
+    /**
+     * 删除 名为"Java" 这本书
+     */
     private void doDelete() {
         int count = getContentResolver().delete(bookUri, "name=?", new String[]{"Java"});
         if (count > 0) {
@@ -123,7 +140,6 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
                  */
                 doUpdate();
                 doQuery();
-
                 break;
 
             case R.id.btnDelete:
