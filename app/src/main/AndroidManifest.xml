@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.hongri.androidipc">
+    package="com.hongri.androidipc">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".IPCApplication"
@@ -16,37 +16,34 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".HomeActivity">
-           <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
         </activity>
-        <activity android:name=".SecondActivity">
-        </activity>
+        <activity android:name=".SecondActivity" />
         <!-- 以:开头的进程属于该应用的私有进程 -->
-        <activity android:name=".ThirdActivity">
-        </activity>
+        <activity android:name=".ThirdActivity" />
         <activity
             android:name=".MessagerActivity"
-            android:process=":MessageActivityProcess">
-        </activity>
+            android:process=":MessageActivityProcess" />
 
         <service
             android:name=".MessagerService"
             android:enabled="true"
             android:exported="true"
-            android:process=":remote">
-        </service>
+            android:process=":remote" />
 
         <provider
-            android:name=".contentprovider.MyContentProvider"
+            android:name="com.hongri.androidipc.contentprovider.MyContentProvider"
             android:authorities="com.hongri.androidipc.contentprovider.provider"
             android:permission="com.hongri.androidipc.PROVIDER"
-            android:process=":provider">
-        </provider>
+            android:process=":provider" />
 
-        <activity android:name=".ContentProviderActivity">
+        <activity
+            android:name=".ContentProviderActivity"
+            android:process=":remoteProcess">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -56,11 +53,9 @@
         <service
             android:name=".socket.TCPServerService"
             android:enabled="true"
-            android:exported="true">
-        </service>
+            android:exported="true" />
 
-        <activity android:name=".socket.TCPClientActivity">
-        </activity>
+        <activity android:name=".socket.TCPClientActivity" />
     </application>
 
 </manifest>

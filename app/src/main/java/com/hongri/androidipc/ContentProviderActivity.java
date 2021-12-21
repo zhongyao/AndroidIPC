@@ -29,13 +29,6 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content_provider);
 
-        //Uri bookUri = Uri.parse("content://com.hongri.androidipc.contentprovider.provider");
-        //getContentResolver().query(bookUri, null, null, null, null);
-        //getContentResolver().query(bookUri, null, null, null, null);
-        //getContentResolver().query(bookUri, null, null, null, null);
-
-        //Uri bookUri = Uri.parse(MyContentProvider.BOOK_CONTENT_URI)
-
         btnInsert = (Button) findViewById(R.id.btnInsert);
         btnQuery = (Button) findViewById(R.id.btnQuery);
         btnQueryByUser = (Button) findViewById(R.id.btnQueryByUser);
