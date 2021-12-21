@@ -14,11 +14,11 @@ import com.hongri.androidipc.util.MyConstant;
 /**
  * @author hongri
  */
-public class MessagerService extends Service {
+public class MessengerService extends Service {
 
     private Messenger messenger;
 
-    private static class MessagerHandler extends Handler {
+    private static class MessengerHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -54,7 +54,7 @@ public class MessagerService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        messenger = new Messenger(new MessagerHandler());
+        messenger = new Messenger(new MessengerHandler());
     }
 
     @Override

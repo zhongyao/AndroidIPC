@@ -19,7 +19,7 @@ import com.hongri.androidipc.util.MyConstant;
 /**
  * @author hongri
  */
-public class MessagerActivity extends AppCompatActivity {
+public class MessengerActivity extends AppCompatActivity {
 
     private Messenger mService;
 
@@ -48,7 +48,7 @@ public class MessagerActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 //intent.setComponent(new ComponentName("com.hongri.server","com.hongri.server.MessagerService"));
                 //intent.setClassName(MessagerActivity.this, "com.hongri.androidipc.MessagerService");
-                intent.setClass(MessagerActivity.this, MessagerService.class);
+                intent.setClass(MessengerActivity.this, MessengerService.class);
                 bindService(intent, conn, Context.BIND_AUTO_CREATE);
             }
         });

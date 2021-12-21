@@ -26,11 +26,11 @@
         <!-- 以:开头的进程属于该应用的私有进程 -->
         <activity android:name=".ThirdActivity" />
         <activity
-            android:name=".MessagerActivity"
+            android:name=".MessengerActivity"
             android:process=":MessageActivityProcess" />
 
         <service
-            android:name=".MessagerService"
+            android:name=".MessengerService"
             android:enabled="true"
             android:exported="true"
             android:process=":remote" />

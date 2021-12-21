@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         findViewById(R.id.btnMessager).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MessagerActivity.class);
+                Intent intent = new Intent(HomeActivity.this, MessengerActivity.class);
                 startActivity(intent);
             }
         });
