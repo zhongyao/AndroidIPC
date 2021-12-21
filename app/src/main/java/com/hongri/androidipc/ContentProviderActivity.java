@@ -2,9 +2,11 @@ package com.hongri.androidipc;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +27,7 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
     //user uri
     private final Uri userUri = MyContentProvider.USER_CONTENT_URI;
     private Button btnInsert, btnQuery, btnQueryByUser, btnModify, btnDelete;
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,23 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
         btnQueryByUser.setOnClickListener(this);
         btnModify.setOnClickListener(this);
         btnDelete.setOnClickListener(this);
+
+        getContentResolver().registerContentObserver(bookUri, true, mContentObserver);
+        getContentResolver().registerContentObserver(userUri, true, mContentObserver);
     }
+
+    /**
+     * 定义一个内容观察者【数据有更新时会调用】
+     */
+    private ContentObserver mContentObserver = new ContentObserver(mHandler) {
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+            //这里selfChange都是返回false的，不用理会这个参数
+            Logger.d("onChange调用 --- 数据有更新");
+        }
+    };
+
 
     /**
      * 向 bookUri 中插入一本书
@@ -153,5 +172,11 @@ public class ContentProviderActivity extends AppCompatActivity implements View.O
             default:
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        getContentResolver().unregisterContentObserver(mContentObserver);
     }
 }
