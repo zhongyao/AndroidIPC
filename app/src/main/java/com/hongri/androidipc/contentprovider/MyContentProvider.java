@@ -56,7 +56,7 @@ public class MyContentProvider extends ContentProvider {
 
     /**
      * ContentProvider的创建：做一些初始化的工作
-     *
+     * onCreate方法 运行在主线程，其他方法运行在工作线程
      * @return
      */
     @Override
