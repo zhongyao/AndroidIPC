@@ -14,10 +14,16 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import com.hongri.androidipc.util.Logger;
+
+/**
+ * socket跨进程通信
+ * 2、服务端
+ */
 public class TCPServerService extends Service {
 
-    private boolean mIsServiceDestoryed = false;
-    private String[] mDefinedMessages = new String[] {
+    private boolean mIsServiceDestroyed = false;
+    private final String[] mDefinedMessages = new String[]{
             "你好啊，哈哈",
             "请问你叫什么名字呀？",
             "今天北京天气不错啊，shy",
@@ -38,7 +44,7 @@ public class TCPServerService extends Service {
 
     @Override
     public void onDestroy() {
-        mIsServiceDestoryed = true;
+        mIsServiceDestroyed = true;
         super.onDestroy();
     }
 
@@ -47,20 +53,20 @@ public class TCPServerService extends Service {
         @SuppressWarnings("resource")
         @Override
         public void run() {
-            ServerSocket serverSocket = null;
+            ServerSocket serverSocket;
             try {
                 serverSocket = new ServerSocket(8888);
             } catch (IOException e) {
-                System.err.println("establish tcp server failed, port:8688");
+                System.err.println("establish tcp server failed, port:8888");
                 e.printStackTrace();
                 return;
             }
 
-            while (!mIsServiceDestoryed) {
+            while (!mIsServiceDestroyed) {
                 try {
                     // 接受客户端请求
                     final Socket client = serverSocket.accept();
-                    System.out.println("accept");
+                    Logger.d("accept");
                     new Thread() {
                         @Override
                         public void run() {
@@ -69,7 +75,7 @@ public class TCPServerService extends Service {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                        };
+                        }
                     }.start();
 
                 } catch (IOException e) {
@@ -87,18 +93,18 @@ public class TCPServerService extends Service {
         PrintWriter out = new PrintWriter(new BufferedWriter(
                 new OutputStreamWriter(client.getOutputStream())), true);
         out.println("欢迎来到聊天室！");
-        while (!mIsServiceDestoryed) {
+        while (!mIsServiceDestroyed) {
             String str = in.readLine();
-            System.out.println("msg from client:" + str);
+            Logger.d("msg from client:" + str);
             if (str == null) {
                 break;
             }
             int i = new Random().nextInt(mDefinedMessages.length);
             String msg = mDefinedMessages[i];
             out.println(msg);
-            System.out.println("send :" + msg);
+            Logger.d("send :" + msg);
         }
-        System.out.println("client quit.");
+        Logger.d("client quit.");
         // 关闭流
         MyUtils.close(out);
         MyUtils.close(in);

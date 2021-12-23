@@ -1,11 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#ffffff"
-              android:orientation="vertical"
-              android:padding="5dp"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:padding="5dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,7 +18,7 @@
             <TextView
                 android:id="@+id/msg_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 
@@ -34,14 +32,17 @@
             android:layout_height="35dp"
             android:layout_weight="1"
             android:ems="10"
-            android:padding="5dp"/>
+            android:padding="5dp" />
 
         <Button
             android:id="@+id/send"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="40dp"
+            android:background="@color/light_green"
             android:enabled="false"
-            android:text="发送"/>
+            android:text="发送"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

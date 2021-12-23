@@ -23,8 +23,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import com.hongri.androidipc.R;
 
+import com.hongri.androidipc.R;
+import com.hongri.androidipc.util.Logger;
+
+/**
+ * socket跨进程通信
+ * 1、客户端
+ */
 public class TCPClientActivity extends Activity implements OnClickListener {
 
     private static final int MESSAGE_RECEIVE_NEW_MSG = 1;
@@ -44,7 +50,7 @@ public class TCPClientActivity extends Activity implements OnClickListener {
             switch (msg.what) {
                 case MESSAGE_RECEIVE_NEW_MSG: {
                     mMessageTextView.setText(mMessageTextView.getText()
-                        + (String)msg.obj);
+                            + (String) msg.obj);
                     break;
                 }
                 case MESSAGE_SOCKET_CONNECTED: {
@@ -61,10 +67,10 @@ public class TCPClientActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tcpclient);
-        mMessageTextView = (TextView)findViewById(R.id.msg_container);
-        mSendButton = (Button)findViewById(R.id.send);
+        mMessageTextView = (TextView) findViewById(R.id.msg_container);
+        mSendButton = (Button) findViewById(R.id.send);
         mSendButton.setOnClickListener(this);
-        mMessageEditText = (EditText)findViewById(R.id.msg);
+        mMessageEditText = (EditText) findViewById(R.id.msg);
         Intent service = new Intent(this, TCPServerService.class);
         startService(service);
         new Thread() {
@@ -118,34 +124,35 @@ public class TCPClientActivity extends Activity implements OnClickListener {
         Socket socket = null;
         while (socket == null) {
             try {
-                socket = new Socket("192.168.199.223", 8888);
+                //此处应修改为当前测试机IP地址
+                socket = new Socket("10.46.13.87", 8888);
                 mClientSocket = socket;
                 mPrintWriter = new PrintWriter(new BufferedWriter(
-                    new OutputStreamWriter(socket.getOutputStream())), true);
+                        new OutputStreamWriter(socket.getOutputStream())), true);
                 mHandler.sendEmptyMessage(MESSAGE_SOCKET_CONNECTED);
-                System.out.println("connect server success");
+                Logger.d("connect server success");
             } catch (IOException e) {
                 SystemClock.sleep(1000);
-                System.out.println("connect tcp server failed, retry...");
+                Logger.d("connect tcp server failed, retry...");
             }
         }
 
         try {
             // 接收服务器端的消息
             BufferedReader br = new BufferedReader(new InputStreamReader(
-                socket.getInputStream()));
+                    socket.getInputStream()));
             while (!TCPClientActivity.this.isFinishing()) {
                 String msg = br.readLine();
-                System.out.println("receive :" + msg);
+                Logger.d("receive :" + msg);
                 if (msg != null) {
                     String time = formatDateTime(System.currentTimeMillis());
                     final String showedMsg = "server " + time + ":" + msg
-                        + "\n";
+                            + "\n";
                     mHandler.obtainMessage(MESSAGE_RECEIVE_NEW_MSG, showedMsg)
-                        .sendToTarget();
+                            .sendToTarget();
                 }
             }
-            System.out.println("quit...");
+            Logger.d("quit...");
             MyUtils.close(mPrintWriter);
             MyUtils.close(br);
             socket.close();

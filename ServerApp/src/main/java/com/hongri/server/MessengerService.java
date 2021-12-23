@@ -12,7 +12,7 @@ import com.hongri.server.util.Logger;
 /**
  * @author hongri
  */
-public class MessagerService extends Service {
+public class MessengerService extends Service {
 
     private Messenger messenger;
 
