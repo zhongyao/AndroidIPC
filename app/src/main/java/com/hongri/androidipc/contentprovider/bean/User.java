@@ -1,4 +1,4 @@
-package com.hongri.androidipc.bean;
+package com.hongri.androidipc.contentprovider.bean;
 
 import java.io.Serializable;
 

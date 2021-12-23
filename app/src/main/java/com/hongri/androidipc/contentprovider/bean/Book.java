@@ -1,4 +1,4 @@
-package com.hongri.androidipc.bean;
+package com.hongri.androidipc.contentprovider.bean;
 
 /**
  * Created by zhongyao on 2018/6/11.

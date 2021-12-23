@@ -22,9 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity" />
         <!-- 以:开头的进程属于该应用的私有进程 -->
-        <activity android:name=".ThirdActivity" />
         <activity
             android:name=".messenger.MessengerActivity"
             android:process=":MessageActivityProcess" />
