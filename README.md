@@ -11,7 +11,7 @@
 #### 4、使用AIDL（Android接口定义语言）：
 AIDL底层的实现是Binder，下面会单独介绍AIDL的实现原理。
 
-#### 5、使用ContentProvider[ContentProvider基础应用](https://blog.csdn.net/u012440207/article/details/122062280?spm=1001.2014.3001.5501)：
+#### 5、使用ContentProvider  『 [ContentProvider基础应用](https://blog.csdn.net/u012440207/article/details/122062280?spm=1001.2014.3001.5501) 』：
 ContentProvider是Android中提供的专门用于不同应用间进行数据共享的方式，ContentProvider的底层实现同样是Binder。
 
 #### 6、使用Socket：
